@@ -2,8 +2,8 @@ import cv2
 
 cap = cv2.VideoCapture(0)
 
-tracker = cv2.TrackerMOSSE_create()
-#tracker = cv2.TrackerCSRT_create()
+#tracker = cv2.TrackerMOSSE_create()
+tracker = cv2.TrackerCSRT_create()
 
 success, img = cap.read()
 bbox = cv2.selectROI("Tracking", img, False)
