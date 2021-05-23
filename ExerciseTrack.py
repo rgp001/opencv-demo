@@ -4,6 +4,10 @@ import time
 import pyttsx3
 import urllib.request
 import numpy as np
+import os
+
+duration = 0.2  # seconds
+freq = 500  # Hz
 
 engine = pyttsx3.init()
 
@@ -88,6 +92,7 @@ while True:
                 prevOverlap = True
                 cv2.rectangle(frame1, (x, y), (x + w, y + h), (0, 255, 0), 2)
                 #winsound.Beep(500, 200)
+                os.system('play -nq -t alsa synth {} sine {}'.format(duration, freq))
                 count += 1
                 engine.say(str(count))
                 engine.runAndWait()
