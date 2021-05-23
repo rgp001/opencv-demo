@@ -1,3 +1,4 @@
 numpy==1.20.3
 opencv-contrib-python==4.5.2.52
 opencv-python==4.5.2.52
+pyttsx3==2.90
