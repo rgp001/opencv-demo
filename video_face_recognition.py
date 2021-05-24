@@ -24,7 +24,7 @@ for k, v in sources.items():
     img = cv2.resize(imgOriginal, (640, 480))
     # cv2.imshow(k, img)
 
-# cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)
 #
 # cap.set(3, 630)
 # cap.set(4, 480)
@@ -37,18 +37,19 @@ url = 'http://192.168.0.105:8080/shot.jpg'
 
 def webcam_video(url):
     while True:
+        success, imgTest = cap.read()
         # Use urllib to get the image from the IP camera
 
-        imgResp = urllib.request.urlopen(url)
-
-        # Numpy to convert into a array
-        imgNp = np.array(bytearray(imgResp.read()), dtype=np.uint8)
-
-        # Finally decode the array to OpenCV usable format ;)
-        imgTest = cv2.imdecode(imgNp, -1)
-        imgTest = cv2.resize(imgTest, (640, 480))
-
-        imgTest = cv2.flip(imgTest, 1)
+        # imgResp = urllib.request.urlopen(url)
+        #
+        # # Numpy to convert into a array
+        # imgNp = np.array(bytearray(imgResp.read()), dtype=np.uint8)
+        #
+        # # Finally decode the array to OpenCV usable format ;)
+        # imgTest = cv2.imdecode(imgNp, -1)
+        # imgTest = cv2.resize(imgTest, (640, 480))
+        #
+        # imgTest = cv2.flip(imgTest, 1)
 
         # print('sending')
 
