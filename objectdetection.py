@@ -33,7 +33,8 @@ while True:
 
         for classIds, confidence, box in zip(classIds.flatten(), confs.flatten(), bbox):
             cv2.rectangle(img, box, color=(0, 255, 0), thickness=2)
-            cv2.putText(img, classNames[classIds - 1].upper(), (box[0] + 10, box[1] + 30), cv2.FONT_HERSHEY_COMPLEX, 1,
+            label = classNames[classIds - 1].upper() + str(confidence)
+            cv2.putText(img, label, (box[0] + 10, box[1] + 30), cv2.FONT_HERSHEY_COMPLEX, 1,
                         (0, 255, 0), 2)
 
     cv2.imshow("Output", img)
