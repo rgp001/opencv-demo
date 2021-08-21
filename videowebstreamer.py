@@ -3,7 +3,7 @@ import cv2
 #Initialize the Flask app
 app = Flask(__name__)
 
-#camera = cv2.VideoCapture(0)
+camera = cv2.VideoCapture(0)
 
 def gen_frames():
     success, frame = camera.read()  # read the camera frame

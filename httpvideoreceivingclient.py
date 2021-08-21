@@ -5,7 +5,7 @@ import urllib.request
 
 url = 'http://127.0.0.1:5000/video_feed'
 
-camera = cv2.VideoCapture(0)
+#camera = cv2.VideoCapture(0)
 
 while True:
    #print('Getting image')
